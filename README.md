@@ -1,15 +1,13 @@
 # Proximas fechas importantes 
 
-## 11/04 y 14/04 
-                 Comienzo de entrevista de documentacion y funcional
-                 Creación de UserStorys
-                 Comienzo de kanban + Aplicarlo al GitHub
-                 Paso de entrevistas en PDF a Google Form (Ambas)
-                 
-## 18/04 
-         Comienzo de sprint de diseño
-         Realizacion de la Planning basada en el kanban
-         Comienzo de MER (Diagrama Entidad - Relacion)
+ 
+                 Completar MER - MR - Tipos de datos	
+                 Github - crear project
+                 Reacomodar el gantt - Diseño con DBA 
+                 Todas las tablas creadas (Normalizado)
+                 Relaciones entre tablas 
+                 Datos de prueba
+                 Casos de prueba BD (Querys)
 
 # Grupo-1
 Integrantes Grupo: Agustin Cachambi, Franco Cabrera, Regina Tebaldi, Valentin Salvatierra.                                                               
