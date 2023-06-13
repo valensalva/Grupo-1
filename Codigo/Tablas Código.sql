@@ -18,7 +18,6 @@ CREATE TABLE Login(nombre_usuario VARCHAR(20) PRIMARY KEY,
 CREATE TABLE Likes(lista_likes VARCHAR(300) PRIMARY KEY,
                    id_user INT(6),
                    id_publicacion INT(6),
-                   imagenes IMAGE,
                    FOREIGN KEY (id_user) REFERENCES Usuario(id_user)
                    FOREIGN KEY (id_publicacion) REFERENCES Publicaciones(id_publicacion));
                    
@@ -36,13 +35,13 @@ CREATE TABLE Comentarios(id_comentario INT(6) PRIMARY KEY,
                          lista_likes VARCHAR(300),
                          imagenes IMAGE,
                          fecha DATETIME,
-                        FOREIGN KEY (id_publicacion) REFERENCES Publicaciones(id_publicaciones),
-                        FOREIGN KEY (id_user) REFERENCES Usuario(id_user));
+                         FOREIGN KEY (id_publicacion) REFERENCES Publicaciones(id_publicaciones),
+                         FOREIGN KEY (id_user) REFERENCES Usuario(id_user));
                          
 CREATE TABLE Seguidos(lista_seguidos VARCHAR(300) PRIMARY KEY,
                       id_user INT(6),
-                     FOREIGN KEY (id_user) REFERENCES Usuario(id_user));
+                      FOREIGN KEY (id_user) REFERENCES Usuario(id_user));
                       
 CREATE TABLE Seguidores(lista_seguidores VARCHAR(300) PRIMARY KEY,
                         id_user INT(6),
-                       FOREIGN KEY (id_user) REFERENCES Usuario(id_user));
+                        FOREIGN KEY (id_user) REFERENCES Usuario(id_user));
