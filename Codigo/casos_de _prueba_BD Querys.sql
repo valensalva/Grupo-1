@@ -1,4 +1,3 @@
-
 SELECT * FROM Login
 	WHERE nombre_usuario = "Pepe"
         
