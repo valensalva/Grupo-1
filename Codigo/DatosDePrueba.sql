@@ -10,11 +10,11 @@ INSERT INTO Usuario(id_user,nombre_usuario, email,lista_seguidos,lista_seguidore
 INSERT INTO Usuario(id_user,nombre_usuario, email,lista_seguidos,lista_seguidores,descripcion,foto_perfil)
 	VALUES (8, "Agus", "agustinloser@gmail.com.ar", 6, 4, "Adicto al juego", NULL );
 
-INSERT INTO Likes(lista_likes, id_user, id_publicacion, imagenes)
-	VALUES (4,1,5,NULL);
+INSERT INTO Likes(lista_likes, id_user, id_publicacion)
+	VALUES (4,1,5);
 
-INSERT INTO Likes(lista_likes, id_user, id_publicacion, imagenes)
-        VALUES (2,11,4,NULL);
+INSERT INTO Likes(lista_likes, id_user, id_publicacion)
+        VALUES (2,11,4);
 
 INSERT INTO Publicaciones(id_publicacion,id_user,lista_likes,imagenes,fecha)
 	VALUES (5,1,4,NULL,"11-6-21");
