@@ -1,13 +1,16 @@
 # Proximas fechas importantes 
 
- 
-                 Completar MER - MR - Tipos de datos	
-                 Github - crear project
-                 Reacomodar el gantt - Diseño con DBA 
+                 Arreglar el MR, mal normalizado 
                  Todas las tablas creadas (Normalizado)
                  Relaciones entre tablas 
                  Datos de prueba
-                 Casos de prueba BD (Querys)
+                 Arregñar Casos de prueba BD (Querys) Sprint 2
+                 Probar casos de prueba Sprint 2
+                 Casos de prueba Sprint 3
+                 Hostear proyecto 
+                 Pagina login 
+                 Pagina registro 
+                 
 
 # Grupo-1
 Integrantes Grupo: Agustin Cachambi, Franco Cabrera, Regina Tebaldi, Valentin Salvatierra.                                                               
