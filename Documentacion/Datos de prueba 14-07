@@ -30,4 +30,4 @@ INSERT INTO Publicacion(id_publicacion, id_user, fecha, texto) VALUES (5, 3, 09-
 
 DATOS PARA Comentario:
 
-INSERT INTO Comentario(
+INSERT INTO Comentario
