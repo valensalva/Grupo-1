@@ -1,0 +1,33 @@
+DATOS PARA login:
+
+INSERT INTO login (email, nombre_usuario, contrasena) VALUES ("valensalva@gmail.com", "valensalva", "elpro");
+INSERT INTO login (email, nombre_usuario, contrasena) VALUES ("regina@gmail.com", "regiteb", "nashe");
+INSERT INTO login (email, nombre_usuario, contrasena) VALUES ("fran@gmail.com", "francabre", "minelover");
+INSERT INTO login (email, nombre_usuario, contrasena) VALUES ("agus@gmail.com", "aguscachambi", "cacha123");
+INSERT INTO login (email, nombre_usuario, contrasena) VALUES ("bananirou@gmail.com", "bananirou", "elpapu");
+
+------------------------------------------------------------------------------------------------------------------------------
+
+DATOS PARA usuario:
+
+INSERT INTO usuario (id_user, descripcion, email, nombre_usuario) VALUES (1, "me gusta programar", "valensalva@gmail.com, "valensalva")
+INSERT INTO usuario (id_user, descripcion, email, nombre_usuario) VALUES (2, "me gusta barbie", "regina@gmail.com, "regiteb")
+INSERT INTO usuario (id_user, descripcion, email, nombre_usuario) VALUES (3, "me gusta minecraft", "fran@gmail.com, "francabre")
+INSERT INTO usuario (id_user, descripcion, email, nombre_usuario) VALUES (4, "me gusta el voley", "agus@gmail.com, "aguscachambi")
+INSERT INTO usuario (id_user, descripcion, email, nombre_usuario) VALUES (5, "el salto del papu", "bananirou@gmail.com, "bananirou")
+
+------------------------------------------------------------------------------------------------------------------------------
+
+DATOS PARA Publicacion:
+
+INSERT INTO Publicacion(id_publicacion, id_user, fecha, texto) VALUES (1, 5, 14-07-2023, "hoy stream chabales")
+INSERT INTO Publicacion(id_publicacion, id_user, fecha, texto) VALUES (2, 2, 12-07-2023, "no hacen nada los vagos")
+INSERT INTO Publicacion(id_publicacion, id_user, fecha, texto) VALUES (3, 4, 11-07-2023, "gane el torneo")
+INSERT INTO Publicacion(id_publicacion, id_user, fecha, texto) VALUES (4, 1, 01-07-2023, "soy crack")
+INSERT INTO Publicacion(id_publicacion, id_user, fecha, texto) VALUES (5, 3, 09-07-2023, "aguante el minecraft")
+
+------------------------------------------------------------------------------------------------------------------------------
+
+DATOS PARA Comentario:
+
+INSERT INTO Comentario(
