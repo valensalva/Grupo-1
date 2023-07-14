@@ -8,7 +8,7 @@
         $query="SELECT nombre FROM usuario WHERE nombre='$usr'";
         $update= "UPDATE usuario SET contraseña= '$psw_n' WHERE nombre= '$usr'";
 
-        $connect=mysqli_connect('localhost', 'id20936643_matu', 'MuyBuen@s123', 'id20936643_almacenmary');
+        $connect=mysqli_connect('localhost', 'id20946012_roots', 'Roots123+', 'id20946012_mydb');
         mysqli_set_charset($connect, 'utf8');
         
         $res=mysqli_query($connect, $query);
