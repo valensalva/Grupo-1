@@ -1,15 +1,11 @@
 # Proximas fechas importantes 
+                Fin del sprint 4 - 29 de agosto 
 
-                 Arreglar el MR, mal normalizado 
-                 Todas las tablas creadas (Normalizado)
-                 Relaciones entre tablas 
-                 Datos de prueba
-                 Arregñar Casos de prueba BD (Querys) Sprint 2
-                 Probar casos de prueba Sprint 2
-                 Casos de prueba Sprint 3
-                 Hostear proyecto 
-                 Pagina login 
-                 Pagina registro 
+# Actividades a realizar
+
+                 Recuperacion de conraseña (Visual y funcional)
+                 Arreglo de Login y Registro (Funcionales)
+                 Poder ealizar Publicaciones (Visual y funcional)
                  
 
 # Grupo-1
