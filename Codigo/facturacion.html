@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <link rel="shortcut icon" href="">
+    <title></title>
+
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/facturacion.css">
+
+    <!-- <link rel="stylesheet" href="style/configuracion.css"> -->
+
+    <!-- Incluir jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Incluir Select2 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+    <!-- Incluir Select2 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <article class="logo">
+                <span class="material-symbols-outlined">
+                    shopping_cart
+                </span>
+
+
+                <div>
+                    <p>
+                        Almacen <br>
+                        Mary
+                    </p>
+                </div>
+
+            </article>
+
+            <nav>
+                <a href="#">Facturación</a>
+                <a href="productos.html">Productos</a>
+                <a href="#">Impresión</a>
+                <a href="#">Stock</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-content">
+            <div class="container-table">
+                <table class="facturacion-table">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Cant.</th>
+                            <th>Producto</th>
+                            <th>Detalle</th>
+                            <th>P/U</th>
+                            <th>P/V</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="cuerpoTabla">
+                        <tr id="1">
+                            <td class="codigo">
+                                <input autofocus="" onkeypress="movimientoTablaPorEnter(1, 'codigo', event);"
+                                    onkeydown="movimientosTablaConFlechas(1, 'codigo');" onblur="consultaCodigo('1')"
+                                    onfocus="seleccionarValor(this)" autocomplete="off" value='7790895000782'
+                                    name="codigo">
+
+                            </td>
+                            <td class="cantidad">
+                                <input type="text" value="1.00" name="cantidad" step=".01"
+                                    onkeypress="movimientoTablaPorEnter(1, 'cantidad', event);"
+                                    onkeydown="movimientosTablaConFlechas(1, 'cantidad');"
+                                    onblur="calcularSubTotal('1');" autocomplete="off" onfocus="seleccionarValor(this)">
+                            </td>
+                            <td class="producto"></td>
+                            <td class="detalle"></td>
+                            <td class="precioUnitario"></td>
+                            <td class="precioVariable">
+                                <input onkeypress="movimientoTablaPorEnter(1, 'precioVariable', event);"
+                                    onkeydown="movimientosTablaConFlechas(1, 'precioVariable');"
+                                    onblur="calcularSubTotal('1');" onfocus="seleccionarValor(this)"
+                                    name="precioVariable">
+                            </td>
+                            <td class="subTotal"></td>
+                        </tr>
+                        <tr id="2">
+                            <td class="codigo">
+                                <div><input autofocus="" onfocus="seleccionarValor(this)"
+                                        onkeypress="movimientoTablaPorEnter(2, 'codigo', event);"
+                                        onkeydown="movimientosTablaConFlechas(2, 'codigo');"
+                                        onblur="consultaCodigo('2')" autocomplete="off" name="codigo">
+                                </div>
+                            </td>
+                            <td class="cantidad">
+                                <input type="text" value="1.00" name="cantidad" step=".01"
+                                    onkeypress="movimientoTablaPorEnter(2, 'cantidad', event);"
+                                    onkeydown="movimientosTablaConFlechas(2, 'cantidad');"
+                                    onblur="calcularSubTotal('2');" onfocus="seleccionarValor(this)">
+                            </td>
+                            <td class="producto"></td>
+                            <td class="detalle"></td>
+                            <td class="precioUnitario"></td>
+                            <td class="precioVariable">
+                                <input onkeypress="movimientoTablaPorEnter(2, 'precioVariable', event);"
+                                    onkeydown="movimientosTablaConFlechas(2, 'precioVariable');"
+                                    onblur="calcularSubTotal('2');" onfocus="seleccionarValor(this)"
+                                    name="precioVariable">
+                            </td>
+                            <td class="subTotal"></td>
+                        </tr>
+                        <tr id="3">
+                            <td class="codigo">
+                                <div><input autofocus="" onfocus="seleccionarValor(this)"
+                                        onkeypress="movimientoTablaPorEnter(3, 'codigo', event);"
+                                        onkeydown="movimientosTablaConFlechas(3, 'codigo');"
+                                        onblur="consultaCodigo('3')" autocomplete="off" name="codigo">
+                                </div>
+                            </td>
+                            <td class="cantidad">
+                                <input type="text" value="1.00" name="cantidad" step=".01"
+                                    onkeypress="movimientoTablaPorEnter(3, 'cantidad', event);"
+                                    onkeydown="movimientosTablaConFlechas(3, 'cantidad');"
+                                    onblur="calcularSubTotal('3');" onfocus="seleccionarValor(this)">
+                            </td>
+                            <td class="producto"></td>
+                            <td class="detalle"></td>
+                            <td class="precioUnitario"></td>
+                            <td class="precioVariable">
+                                <input onkeypress="movimientoTablaPorEnter(3, 'precioVariable', event);"
+                                    onkeydown="movimientosTablaConFlechas(3, 'precioVariable');"
+                                    onblur="calcularSubTotal('3');" onfocus="seleccionarValor(this)"
+                                    name="precioVariable">
+                            </td>
+                            <td class="subTotal"></td>
+                        </tr>
+                        <tr id="4">
+                            <td class="codigo">
+                                <div><input autofocus="" onfocus="seleccionarValor(this)"
+                                        onkeypress="movimientoTablaPorEnter(4, 'codigo', event);"
+                                        onkeydown="movimientosTablaConFlechas(4, 'codigo');"
+                                        onblur="consultaCodigo('4')" autocomplete="off" name="codigo">
+                                </div>
+                            </td>
+                            <td class="cantidad">
+                                <input type="text" value="1.00" name="cantidad" step=".01"
+                                    onkeypress="movimientoTablaPorEnter(4, 'cantidad', event);"
+                                    onkeydown="movimientosTablaConFlechas(4, 'cantidad');"
+                                    onblur="calcularSubTotal('4');" onfocus="seleccionarValor(this)">
+                            </td>
+                            <td class="producto"></td>
+                            <td class="detalle"></td>
+                            <td class="precioUnitario"></td>
+                            <td class="precioVariable">
+                                <input onkeypress="movimientoTablaPorEnter(4, 'precioVariable', event);"
+                                    onkeydown="movimientosTablaConFlechas(4, 'precioVariable');"
+                                    onblur="calcularSubTotal('4');" onfocus="seleccionarValor(this)"
+                                    name="precioVariable">
+                            </td>
+                            <td class="subTotal"></td>
+                        </tr>
+                        <tr id="5">
+                            <td class="codigo">
+                                <input onkeypress="movimientoTablaPorEnter(5, 'codigo', event);"
+                                    onkeydown="movimientosTablaConFlechas(5, 'codigo');" onblur="consultaCodigo('5')"
+                                    onfocus="seleccionarValor(this)" name="codigo">
+
+                            </td>
+                            <td class="cantidad">
+                                <input type="text" value="1.00" name="cantidad" step=".01"
+                                    onkeypress="movimientoTablaPorEnter(5, 'cantidad', event);"
+                                    onkeydown="movimientosTablaConFlechas(5, 'cantidad');"
+                                    onblur="calcularSubTotal('1');" onfocus="seleccionarValor(this)">
+                            </td>
+                            <td class="producto"></td>
+                            <td class="detalle"></td>
+                            <td class="precioUnitario"></td>
+                            <td class="precioVariable">
+                                <input onkeypress="movimientoTablaPorEnter(5, 'precioVariable', event);"
+                                    onkeydown="movimientosTablaConFlechas(5, 'precioVariable');"
+                                    onblur="calcularSubTotal('5');" onfocus="seleccionarValor(this)"
+                                    name="precioVariable">
+                            </td>
+                            <td class="subTotal"></td>
+                        </tr>
+                        <tr id="6">
+                            <td class="codigo">
+                                <div><input autofocus="" onfocus="seleccionarValor(this)"
+                                        onkeypress="movimientoTablaPorEnter(6, 'codigo', event);"
+                                        onkeydown="movimientosTablaConFlechas(6, 'codigo');"
+                                        onblur="consultaCodigo('6')" autocomplete="off" name="codigo">
+                                </div>
+                            </td>
+                            <td class="cantidad">
+                                <input type="text" value="1.00" name="cantidad" step=".01"
+                                    onkeypress="movimientoTablaPorEnter(6, 'cantidad', event);"
+                                    onkeydown="movimientosTablaConFlechas(6, 'cantidad');"
+                                    onblur="calcularSubTotal('6');" onfocus="seleccionarValor(this)">
+                            </td>
+                            <td class="producto"></td>
+                            <td class="detalle"></td>
+                            <td class="precioUnitario"></td>
+                            <td class="precioVariable">
+                                <input onkeypress="movimientoTablaPorEnter(6, 'precioVariable', event);"
+                                    onkeydown="movimientosTablaConFlechas(6, 'precioVariable');"
+                                    onblur="calcularSubTotal('6');" onfocus="seleccionarValor(this)"
+                                    name="precioVariable">
+                            </td>
+                            <td class="subTotal"></td>
+                        </tr>
+                        <tr id="7">
+                            <td class="codigo">
+                                <div><input autofocus="" onfocus="seleccionarValor(this)"
+                                        onkeypress="movimientoTablaPorEnter(7, 'codigo', event);"
+                                        onkeydown="movimientosTablaConFlechas(7, 'codigo');"
+                                        onblur="consultaCodigo('7')" autocomplete="off" name="codigo">
+                                </div>
+                            </td>
+                            <td class="cantidad">
+                                <input type="text" value="1.00" name="cantidad" step=".01"
+                                    onkeypress="movimientoTablaPorEnter(7, 'cantidad', event);"
+                                    onkeydown="movimientosTablaConFlechas(7, 'cantidad');"
+                                    onblur="calcularSubTotal('7');" onfocus="seleccionarValor(this)">
+                            </td>
+                            <td class="producto"></td>
+                            <td class="detalle"></td>
+                            <td class="precioUnitario"></td>
+                            <td class="precioVariable">
+                                <input onkeypress="movimientoTablaPorEnter(7, 'precioVariable', event);"
+                                    onkeydown="movimientosTablaConFlechas(7, 'precioVariable');"
+                                    onblur="calcularSubTotal('7');" onfocus="seleccionarValor(this)"
+                                    name="precioVariable">
+                            </td>
+                            <td class="subTotal"></td>
+                        </tr>
+                        <tr id="8">
+                            <td class="codigo">
+                                <div><input autofocus="" onfocus="seleccionarValor(this)"
+                                        onkeypress="movimientoTablaPorEnter(8, 'codigo', event);"
+                                        onkeydown="movimientosTablaConFlechas(8, 'codigo');"
+                                        onblur="consultaCodigo('8')" autocomplete="off" name="codigo">
+                                </div>
+                            </td>
+                            <td class="cantidad">
+                                <input type="text" value="1.00" name="cantidad" step=".01"
+                                    onkeypress="movimientoTablaPorEnter(8, 'cantidad', event);"
+                                    onkeydown="movimientosTablaConFlechas(8, 'cantidad');"
+                                    onblur="calcularSubTotal('8');" onfocus="seleccionarValor(this)">
+                            </td>
+                            <td class="producto"></td>
+                            <td class="detalle"></td>
+                            <td class="precioUnitario"></td>
+                            <td class="precioVariable">
+                                <input onkeypress="movimientoTablaPorEnter(8, 'precioVariable', event);"
+                                    onkeydown="movimientosTablaConFlechas(8, 'precioVariable');"
+                                    onblur="calcularSubTotal('8');" onfocus="seleccionarValor(this)"
+                                    name="precioVariable">
+                            </td>
+                            <td class="subTotal"></td>
+                        </tr>
+                        <tr id="9">
+                            <td class="codigo">
+                                <input autofocus="" onkeypress="movimientoTablaPorEnter(9, 'codigo', event);"
+                                    onkeydown="movimientosTablaConFlechas(9, 'codigo');" onblur="consultaCodigo('1')"
+                                    onfocus="seleccionarValor(this)" name="codigo">
+                            </td>
+                            <td class="cantidad">
+                                <input type="text" value="1.00" name="cantidad" step=".01"
+                                    onkeypress="movimientoTablaPorEnter(9, 'cantidad', event);"
+                                    onkeydown="movimientosTablaConFlechas(9, 'cantidad');"
+                                    onblur="calcularSubTotal('9');" onfocus="seleccionarValor(this)">
+                            </td>
+                            <td class="producto"></td>
+                            <td class="detalle"></td>
+                            <td class="precioUnitario"></td>
+                            <td class="precioVariable">
+                                <input onkeypress="movimientoTablaPorEnter(9, 'precioVariable', event);"
+                                    onkeydown="movimientosTablaConFlechas(9, 'precioVariable');"
+                                    onblur="calcularSubTotal('9');" onfocus="seleccionarValor(this)"
+                                    name="precioVariable">
+                            </td>
+                            <td class="subTotal"></td>
+                        </tr>
+                        <tr id="10">
+                            <td class="codigo">
+                                <div><input autofocus="" onfocus="seleccionarValor(this)"
+                                        onkeypress="movimientoTablaPorEnter(10, 'codigo', event);"
+                                        onkeydown="movimientosTablaConFlechas(10, 'codigo');"
+                                        onblur="consultaCodigo('10')" autocomplete="off" name="codigo">
+                                </div>
+                            </td>
+                            <td class="cantidad">
+                                <input type="text" value="1.00" name="cantidad" step=".01"
+                                    onkeypress="movimientoTablaPorEnter(10, 'cantidad', event);"
+                                    onkeydown="movimientosTablaConFlechas(10, 'cantidad');"
+                                    onblur="calcularSubTotal('10');" onfocus="seleccionarValor(this)">
+                            </td>
+                            <td class="producto"></td>
+                            <td class="detalle"></td>
+                            <td class="precioUnitario"></td>
+                            <td class="precioVariable">
+                                <input onkeypress="movimientoTablaPorEnter(10, 'precioVariable', event);"
+                                    onkeydown="movimientosTablaConFlechas(10, 'precioVariable');"
+                                    onblur="calcularSubTotal('10');" onfocus="seleccionarValor(this)"
+                                    name="precioVariable">
+                            </td>
+                            <td class="subTotal"></td>
+                        </tr>
+                        <tr id="11">
+                            <td class="codigo">
+                                <div><input autofocus="" onfocus="seleccionarValor(this)"
+                                        onkeypress="movimientoTablaPorEnter(11, 'codigo', event);"
+                                        onkeydown="movimientosTablaConFlechas(11, 'codigo');"
+                                        onblur="consultaCodigo('11')" autocomplete="off" name="codigo">
+                                </div>
+                            </td>
+                            <td class="cantidad">
+                                <input type="text" value="1.00" name="cantidad" step=".01"
+                                    onkeypress="movimientoTablaPorEnter(11, 'cantidad', event);"
+                                    onkeydown="movimientosTablaConFlechas(11, 'cantidad');"
+                                    onblur="calcularSubTotal('11');" onfocus="seleccionarValor(this)">
+                            </td>
+                            <td class="producto"></td>
+                            <td class="detalle"></td>
+                            <td class="precioUnitario"></td>
+                            <td class="precioVariable">
+                                <input onkeypress="movimientoTablaPorEnter(11, 'precioVariable', event);"
+                                    onkeydown="movimientosTablaConFlechas(11, 'precioVariable');"
+                                    onblur="calcularSubTotal('11');" onfocus="seleccionarValor(this)"
+                                    name="precioVariable">
+                            </td>
+                            <td class="subTotal"></td>
+                        </tr>
+                        <tr id="12">
+                            <td class="codigo">
+                                <div><input autofocus="" onfocus="seleccionarValor(this)"
+                                        onkeypress="movimientoTablaPorEnter(12, 'codigo', event);"
+                                        onkeydown="movimientosTablaConFlechas(12, 'codigo');"
+                                        onblur="consultaCodigo('12')" autocomplete="off" name="codigo">
+                                </div>
+                            </td>
+                            <td class="cantidad">
+                                <input type="text" value="1.00" name="cantidad" step=".01"
+                                    onkeypress="movimientoTablaPorEnter(12, 'cantidad', event);"
+                                    onkeydown="movimientosTablaConFlechas(12, 'cantidad');"
+                                    onblur="calcularSubTotal('12');" onfocus="seleccionarValor(this)">
+                            </td>
+                            <td class="producto"></td>
+                            <td class="detalle"></td>
+                            <td class="precioUnitario"></td>
+                            <td class="precioVariable">
+                                <input onkeypress="movimientoTablaPorEnter(12, 'precioVariable', event);"
+                                    onkeydown="movimientosTablaConFlechas(12, 'precioVariable');"
+                                    onblur="calcularSubTotal('12');" onfocus="seleccionarValor(this)"
+                                    name="precioVariable">
+                            </td>
+                            <td class="subTotal"></td>
+                        </tr>
+                        <tr id="13">
+                            <td class="codigo">
+                                <input autofocus="" onkeypress="movimientoTablaPorEnter(13, 'codigo', event);"
+                                    onkeydown="movimientosTablaConFlechas(13, 'codigo');" onblur="consultaCodigo('1')"
+                                    onfocus="seleccionarValor(this)" name="codigo">
+
+                            </td>
+                            <td class="cantidad">
+                                <input type="text" value="1.00" name="cantidad" step=".01"
+                                    onkeypress="movimientoTablaPorEnter(13, 'cantidad', event);"
+                                    onkeydown="movimientosTablaConFlechas(13, 'cantidad');"
+                                    onblur="calcularSubTotal('13');" onfocus="seleccionarValor(this)">
+                            </td>
+                            <td class="producto"></td>
+                            <td class="detalle"></td>
+                            <td class="precioUnitario"></td>
+                            <td class="precioVariable">
+                                <input onkeypress="movimientoTablaPorEnter(13, 'precioVariable', event);"
+                                    onkeydown="movimientosTablaConFlechas(13, 'precioVariable');"
+                                    onblur="calcularSubTotal('13');" onfocus="seleccionarValor(this)"
+                                    name="precioVariable">
+                            </td>
+                            <td class="subTotal"></td>
+                        </tr>
+                        <tr id="14">
+                            <td class="codigo">
+                                <div><input autofocus="" onfocus="seleccionarValor(this)"
+                                        onkeypress="movimientoTablaPorEnter(14, 'codigo', event);"
+                                        onkeydown="movimientosTablaConFlechas(14, 'codigo');"
+                                        onblur="consultaCodigo('14')" autocomplete="off" name="codigo">
+                                </div>
+                            </td>
+                            <td class="cantidad">
+                                <input type="text" value="1.00" name="cantidad" step=".01"
+                                    onkeypress="movimientoTablaPorEnter(14, 'cantidad', event);"
+                                    onkeydown="movimientosTablaConFlechas(14, 'cantidad');"
+                                    onblur="calcularSubTotal('14');" onfocus="seleccionarValor(this)">
+                            </td>
+                            <td class="producto"></td>
+                            <td class="detalle"></td>
+                            <td class="precioUnitario"></td>
+                            <td class="precioVariable">
+                                <input onkeypress="movimientoTablaPorEnter(14, 'precioVariable', event);"
+                                    onkeydown="movimientosTablaConFlechas(14, 'precioVariable');"
+                                    onblur="calcularSubTotal('14');" onfocus="seleccionarValor(this)"
+                                    name="precioVariable">
+                            </td>
+                            <td class="subTotal"></td>
+                        </tr>
+                        <tr id="15">
+                            <td class="codigo">
+                                <div><input autofocus="" onfocus="seleccionarValor(this)"
+                                        onkeypress="movimientoTablaPorEnter(15, 'codigo', event);"
+                                        onkeydown="movimientosTablaConFlechas(15, 'codigo');"
+                                        onblur="consultaCodigo('15')" autocomplete="off" name="codigo">
+                                </div>
+                            </td>
+                            <td class="cantidad">
+                                <input type="text" value="1.00" name="cantidad" step=".01"
+                                    onkeypress="movimientoTablaPorEnter(15, 'cantidad', event);"
+                                    onkeydown="movimientosTablaConFlechas(15, 'cantidad');"
+                                    onblur="calcularSubTotal('15');" onfocus="seleccionarValor(this)">
+                            </td>
+                            <td class="producto"></td>
+                            <td class="detalle"></td>
+                            <td class="precioUnitario"></td>
+                            <td class="precioVariable">
+                                <input onkeypress="movimientoTablaPorEnter(15, 'precioVariable', event);"
+                                    onkeydown="movimientosTablaConFlechas(15, 'precioVariable');"
+                                    onblur="calcularSubTotal('15');" onfocus="seleccionarValor(this)"
+                                    name="precioVariable">
+                            </td>
+                            <td class="subTotal"></td>
+                        </tr>
+
+
+                    </tbody>
+
+                    <tfoot class="ultimafila">
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Total</td>
+                            <td id="total">$ 0</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <aside class="botones">
+                <div>
+                    <button class="borrar" onclick="borrar();">BORRAR</button>
+                    <button class="imprimir">Imprimir</button>
+                    <div>
+                        <button class="guardar" onclick="guardar()">Guardar</button>
+                        <button class="archivos">
+                            <span class="material-symbols-outlined">
+                                more_vert
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <button onclick="borrar();">
+                        <span class="material-symbols-outlined">
+                            delete
+                        </span>
+                    </button>
+                    <button>
+                        <span class="material-symbols-outlined">
+                            print
+                        </span>
+                    </button>
+                    <button>
+                        <span class="material-symbols-outlined">
+                            save
+                        </span>
+                    </button>
+                    <button>
+                        <span class="material-symbols-outlined">
+                            more_vert
+                        </span>
+                    </button>
+
+                </div>
+            </aside>
+
+            <footer class="principal">
+
+                <div class="iconos">
+                    <a href="index.html" id="logout">
+                        <span class="material-symbols-outlined">logout</span>
+                    </a>
+                    <a onclick="abrirConfiguracion();">
+                        <span class="material-symbols-outlined">settings</span>
+                    </a>
+                    <!-- <span class="material-symbols-outlined">settings</span> -->
+                </div>
+
+                <button>Lista de Productos</button>
+
+            </footer>
+        </div>
+    </main>
+
+    <!-- <article class="configuracion" onclick="cerrarConfiguracion()"> -->
+    <article class="configuracion" id="configuracion">
+        <section>
+            <div class="encabezado">
+                <div>
+                    Configuración
+                    <div class="linea"></div>
+                </div>
+            </div>
+
+            <div class="contenido">
+                <nav>
+                    <a id="navRegistro" onclick="botonNavbar('registro');">
+                        <span class="material-symbols-outlined">person</span>
+                        <h1>Registro usuarios</h1>
+                    </a>
+                    <a id="navCategorias" onclick="botonNavbar('categorias');">
+                        <span class="material-symbols-outlined">filter_alt</span>
+                        <h1>Creación categorías</h1>
+                    </a>
+                    <a id="navPagos" onclick="botonNavbar('pagos');">
+                        <span class="material-symbols-outlined">attach_money</span>
+                        <h1>Metodos de pago</h1>
+                    </a>
+
+                    <a onclick="">Cargar</a>
+                </nav>
+
+
+
+
+
+                <div class="resultados">
+                    <div id="modal" class="modal">
+                        <div class="modal-content">
+                            <p id="confirm-message">¿Está seguro de eliminar el usuario?</p>
+                            <button id="confirmarBtn">Confrimar</button>
+                            <button id="cancelarBtn">Cancelar</button>
+                        </div>
+                    </div>
+
+
+                    <div id="registro">
+                        <!--                        
+                        EN CASO DE MODIFICAR EL CONTENIDO LLEVAR LA MODIFICACIÓN AL JS CORRESPONDIENTE
+                                                    NO SEAN PELOTUDOS
+                        -->
+                        <div id="creacionUsuario">
+
+                            <form id="miFormulario" onsubmit="mostrarModal(); return false;">
+                                <input type="text" placeholder="Usuario nuevo" name="usuario" id="nombreUsuarioCrear"
+                                    required minlength="4" maxlength="15">
+                                <button class="sum" type="submit">+</button>
+                            </form>
+
+                        </div>
+
+                        <div id="usuariosExistentes">
+
+                            <form id="miFormulario" onsubmit="mostrarModalA(this, event); return false;">
+                                <input type="text" placeholder="Usuario" name="usuario" value="buenas" readonly>
+
+                                <button type="submit" name="restablecer">
+                                    <span class="material-symbols-outlined">settings_backup_restore</span>
+                                </button>
+                                <button type="submit" name="eliminar">
+                                    <span class="material-symbols-outlined borrar">delete</span>
+                                </button>
+                            </form>
+
+                            <form id="miFormulario" onsubmit="mostrarModalA(this, event); return false;">
+                                <input type="text" placeholder="Usuario" name="usuario" value="romy" readonly>
+    
+                                <button type="submit" name="restablecer">
+                                    <span class="material-symbols-outlined">settings_backup_restore</span>
+                                </button>
+                                <button type="submit" name="eliminar">
+                                    <span class="material-symbols-outlined borrar">delete</span>
+                                </button>
+                            </form>
+                            <form id="miFormulario" onsubmit="mostrarModalA(this, event); return false;">
+                                <input type="text" placeholder="Usuario" name="usuario" value="roman" readonly>
+    
+                                <button type="submit" name="restablecer">
+                                    <span class="material-symbols-outlined">settings_backup_restore</span>
+                                </button>
+                                <button type="submit" name="eliminar">
+                                    <span class="material-symbols-outlined borrar">delete</span>
+                                </button>
+                            </form>
+                            <form id="miFormulario" onsubmit="mostrarModalA(this, event); return false;">
+                                <input type="text" placeholder="Usuario" name="usuario" value="matu" readonly>
+    
+                                <button type="submit" name="restablecer">
+                                    <span class="material-symbols-outlined">settings_backup_restore</span>
+                                </button>
+                                <button type="submit" name="eliminar">
+                                    <span class="material-symbols-outlined borrar">delete</span>
+                                </button>
+                            </form>
+
+                        </div>
+
+                        <footer id="footerRegistro">
+                            <p>¡ATENCIÓN! a la hora de restablecer/crear un usuario este tendrá como
+                                contraseña por defecto su mismo nombre.</p>
+                        </footer>
+
+                    </div>
+
+
+                    <div id="categorias">
+
+                        <div id="categoria">
+
+                            <div class="titulo">
+                                <span class="material-symbols-outlined">expand_more</span>
+                                Categoría
+                            </div>
+
+                            <form id="miFormulario" onsubmit="mostrarModalB(this); return false;">
+                                <input type="text" placeholder="Categoría" name="categoria" required minlength="4"
+                                    maxlength="25">
+                                <button class="sum" type="submit">+</button>
+                            </form>
+
+                        </div>
+
+                        <div id="sub-categoria">
+
+                            <div class="titulo">
+                                <span class="material-symbols-outlined">expand_more</span>
+                                Sub-categoría
+                            </div>
+
+                            <form id="miFormulario" onsubmit="mostrarModalC(this); return false;">
+                                <select name="categoria" id="opcionesCategorias" class="select2" required>
+                                    <option></option>
+                                    <option value="1">Gaseosas</option>
+                                    <option>Opción 2</option>
+                                    <option>hola 3</option>
+                                </select>
+
+                                <input type="text" placeholder="Sub-categoría" name="subCategoria" maxlength="15"
+                                    required>
+                                <button type="submit">+</button>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+
+                    <div id="pagos">
+
+                        <div id="creacionMetodoPago">
+
+                            <form id="miFormulario" onsubmit="mostrarModalD(this); return false;">
+                                <input type="text" placeholder="Metodo de pago" name="nombreMetodoPago"
+                                    required minlength="4" maxlength="15">
+                                <input type="text" placeholder="%" name="decuentoMetodoPago"
+                                    required minlength="1" maxlength="4">                                
+                                
+                                <button class="sum" type="submit">+</button>
+                            </form>
+
+                        </div>
+
+                        <div id="metodoPagoExistentes">
+
+                            <form id="miFormulario" onsubmit="mostrarModalE(this, event); return false;">
+                                <input type="text" placeholder="Metodo de pago" name="nombreMetodoPago" id="nombreMetodoPagoCrear"
+                                    required minlength="4" maxlength="15">
+                                <input type="text" placeholder="%" name="decuentoMetodoPago" id="decuentoMetodoPagoCrear"
+                                    required minlength="1" maxlength="4">                                
+                                
+                                <button type="submit" name="eliminar">
+                                    <span class="material-symbols-outlined borrar">delete</span>
+                                </button>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </section>
+    </article>
+
+    <div id="establecerNuevaContraseñaModal" class="modal">
+        <div class="modal-content">
+            <p id="establecerNuevaContraseña_confirm-message"></p>
+            <form id="establecerNuevaContraseñaForm">
+                <input type="password" name="psw1" placeholder="Nueva contraseña" minlength="2" required>
+                <input type="password" name="psw2" placeholder="Confirmar contraseña" minlength="2" required>
+                <button type="submit">Confrimar</button>
+            </form>            
+                <p id="message"></p>
+
+        </div>
+    </div>
+
+    <div id="guardarFacturaModal" class="modal">
+        <div class="modal-content">
+            <p id="guardarFactura_confirm-message">Guardar como...</p>
+            <form id="guardarFacturaForm">
+                <input type="text" name="nombreArchivo" placeholder="Nombre archivo" minlength="1" required>
+                <button type="submit">Guardar</button>
+            </form>            
+                <p id="guardarFacturaMessage"></p>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="javascript/facturacion.js"></script>
+</body>
+
+</html>
