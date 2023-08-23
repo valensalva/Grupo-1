@@ -5,7 +5,7 @@
 
                  Recuperacion de conraseña (Visual y funcional)
                  Arreglo de Login y Registro (Funcionales)
-                 Poder ealizar Publicaciones (Visual y funcional)
+                 Poder ver publicaciones de prueba (Visual y funcional)
                  
 
 # Grupo-1
