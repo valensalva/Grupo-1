@@ -3,9 +3,8 @@
 
 # Actividades a realizar
 
-                 Recuperacion de conraseña (Visual y funcional)
-                 Arreglo de Login y Registro (Funcionales)
-                 Poder ver publicaciones de prueba (Visual y funcional)
+                 Recuperacion de conraseña (funcional)
+                 
                  
 
 # Grupo-1
