@@ -1,6 +1,6 @@
 <?php
-	include('connect.php');
-	include('functions.php');
+	require 'connect.php';
+	require 'functions.php';
 
 	if(empty($_GET['user_id'])){
 		header('Location: index.php');
