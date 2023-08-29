@@ -46,7 +46,7 @@
 	{
 		global $mysqli;
 		
-		$stmt = $mysqli->prepare("SELECT id FROM usuarios WHERE usuario = ? LIMIT 1");
+		$stmt = $mysqli->prepare("SELECT id_user FROM usuario WHERE nombre_usuario = ? LIMIT 1");
 		$stmt->bind_param("s", $usuario);
 		$stmt->execute();
 		$stmt->store_result();
@@ -64,7 +64,7 @@
 	{
 		global $mysqli;
 		
-		$stmt = $mysqli->prepare("SELECT id FROM usuarios WHERE correo = ? LIMIT 1");
+		$stmt = $mysqli->prepare("SELECT id_user FROM usuario WHERE email = ? LIMIT 1");
 		$stmt->bind_param("s", $email);
 		$stmt->execute();
 		$stmt->store_result();
@@ -105,12 +105,12 @@
 		}
 	}
 	
-	function registraUsuario($usuario, $pass_hash, $nombre, $email, $activo, $token, $tipo_usuario){
+	function registraUsuario($usuario, $pass_hash, $email){
 		
 		global $mysqli;
 		
-		$stmt = $mysqli->prepare("INSERT INTO usuarios (usuario, password, nombre, correo, activacion, token, id_tipo) VALUES(?,?,?,?,?,?,?)");
-		$stmt->bind_param('ssssisi', $usuario, $pass_hash, $nombre, $email, $activo, $token, $tipo_usuario);
+		$stmt = $mysqli->prepare("INSERT INTO login (nombre_usuario, contrasena, email) VALUES(?,?,?,?,?,?,?)");
+		$stmt->bind_param('ssssisi', $usuario, $pass_hash, $email);
 		
 		if ($stmt->execute()){
 			return $mysqli->insert_id;
@@ -149,7 +149,7 @@
 	function validaIdToken($id, $token){
 		global $mysqli;
 		
-		$stmt = $mysqli->prepare("SELECT activacion FROM usuarios WHERE id = ? AND token = ? LIMIT 1");
+		$stmt = $mysqli->prepare("SELECT activacion FROM usuarios WHERE id = ? AND token = ? LIMIT 1"); //No se como arreglar esta linea
 		$stmt->bind_param("is", $id, $token);
 		$stmt->execute();
 		$stmt->store_result();
@@ -174,7 +174,7 @@
 		return $msg;
 	}
 	
-	function activarUsuario($id)
+	function activarUsuario($id) //Funcion innecesaria para nuestra pagina
 	{
 		global $mysqli;
 		
@@ -200,7 +200,7 @@
 	{
 		global $mysqli;
 		
-		$stmt = $mysqli->prepare("SELECT id, id_tipo, password FROM usuarios WHERE usuario = ? || correo = ? LIMIT 1");
+		$stmt = $mysqli->prepare("SELECT id_user, contrasena FROM usuario WHERE nombre_usuario = ? || email = ? LIMIT 1");
 		$stmt->bind_param("ss", $usuario, $usuario);
 		$stmt->execute();
 		$stmt->store_result();
@@ -239,17 +239,17 @@
 	{
 		global $mysqli;
 		
-		$stmt = $mysqli->prepare("UPDATE usuarios SET last_session=NOW(), token_password='', password_request=0 WHERE id = ?");
+		$stmt = $mysqli->prepare("UPDATE usuario SET last_session=NOW(), token_password='', password_request=0 WHERE id = ?");
 		$stmt->bind_param('s', $id);
 		$stmt->execute();
 		$stmt->close();
 	}
 	
-	function isActivo($usuario)
+	function isActivo($usuario) //Funcion para arreglar
 	{
 		global $mysqli;
 		
-		$stmt = $mysqli->prepare("SELECT activacion FROM usuarios WHERE usuario = ? || correo = ? LIMIT 1");
+		$stmt = $mysqli->prepare("SELECT activacion FROM usuario WHERE usuario = ? || correo = ? LIMIT 1");
 		$stmt->bind_param('ss', $usuario, $usuario);
 		$stmt->execute();
 		$stmt->bind_result($activacion);
@@ -283,7 +283,7 @@
 	{
 		global $mysqli;
 		
-		$stmt = $mysqli->prepare("SELECT $campo FROM usuarios WHERE $campoWhere = ? LIMIT 1");
+		$stmt = $mysqli->prepare("SELECT $campo FROM usuario WHERE $campoWhere = ? LIMIT 1");
 		$stmt->bind_param('s', $valor);
 		$stmt->execute();
 		$stmt->store_result();
@@ -301,7 +301,7 @@
 		}
 	}
 	
-	function getPasswordRequest($id)
+	function getPasswordRequest($id) //Funcion para arregalr
 	{
 		global $mysqli;
 		
@@ -350,11 +350,11 @@
 		}
 	}
 	
-	function cambiaPassword($password, $user_id, $token){
+	function cambiaPassword($password, $user_id, $token){ //Acomodar
 		
 		global $mysqli;
 		
-		$stmt = $mysqli->prepare("UPDATE usuarios SET password = ?, token_password='', password_request=0 WHERE id = ? AND token_password = ?");
+		$stmt = $mysqli->prepare("UPDATE usuario SET password = ?, token_password='', password_request=0 WHERE id = ? AND token_password = ?");
 		$stmt->bind_param('sis', $password, $user_id, $token);
 		
 		if($stmt->execute()){
