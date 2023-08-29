@@ -1,6 +1,6 @@
 <?php
 	include 'connect.php';
-	indlude 'funcs.php';
+	include 'funcs.php';
 
 	$errors = array();
 
