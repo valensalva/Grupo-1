@@ -3,7 +3,10 @@
 
 # Actividades a realizar
 
-                 Recuperacion de conraseña (funcional)
+                 Mantener sesion iniciada () [BACK]
+                 Recuperacion de conraseña (funcional) [BACK]
+                 Configuracion y Perfil (Visual) [FRONT]
+                 Ayuda en las otras tareas [TESTER]
                  
                  
 
