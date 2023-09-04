@@ -4,7 +4,8 @@
 # Actividades a realizar
 
                  Mantener sesion iniciada () [BACK]
-                 Recuperacion de conraseña (funcional) [BACK]
+                 Recuperacion de contraseña (funcional) [BACK]
+                 Pantalla de inicio (funcional) [BACK / FRONT]
                  Configuracion y Perfil (Visual) [FRONT]
                  Ayuda en las otras tareas [TESTER]
                  
