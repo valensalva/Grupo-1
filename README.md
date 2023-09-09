@@ -6,6 +6,7 @@
                  Mantener sesion iniciada () [BACK]
                  Recuperacion de contraseña (funcional) [BACK]
                  Pantalla de inicio (funcional) [BACK / FRONT]
+                 Cantida de Likes reales(Solo ver) [BACK]
                  Configuracion y Perfil (Visual) [FRONT]
                  Ayuda en las otras tareas [TESTER]
                  
